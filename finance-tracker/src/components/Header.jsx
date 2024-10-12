@@ -8,9 +8,7 @@ const Header = () => {
   return (
     <header>
       <h1>Finance Tracker</h1>
-      <button onClick={toggleTheme}>
-        Toggle Theme
-      </button>
+
     </header>
   );
 };
