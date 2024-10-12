@@ -10,8 +10,14 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "autoprefixer": "^10.4.20",
+    "babel": "^6.23.0",
+    "jest": "^29.7.0",
+    "modernizr": "^3.13.1",
     "react": "^18.3.1",
-    "react-dom": "^18.3.1"
+    "react-dom": "^18.3.1",
+    "sass": "^1.79.5",
+    "webpack": "^5.95.0"
   },
   "devDependencies": {
     "@eslint/js": "^9.11.1",
