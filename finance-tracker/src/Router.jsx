@@ -1,18 +1,18 @@
 // src/Router.jsx
 import React from 'react';
-import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
-import App from './App'; // Import your main App component
-import Login from './components/Login'; // Create and import Login component
-import Signup from './components/Signup'; // Create and import Signup component
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import App from './App';
+import Login from './components/Login';
+import Signup from './components/Signup';
 
 const AppRouter = () => {
   return (
     <Router>
-      <Switch>
-        <Route path="/signup" component={Signup} />
-        <Route path="/login" component={Login} />
-        <Route path="/" component={App} /> {/* Main app */}
-      </Switch>
+      <Routes>
+        <Route path="/" element={<App />} />
+        <Route path="/login" element={<Login />} />
+        <Route path="/signup" element={<Signup />} />
+      </Routes>
     </Router>
   );
 };

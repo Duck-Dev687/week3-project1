@@ -1,36 +1,34 @@
 // src/components/Signup.jsx
 import React, { useState } from 'react';
-import { useHistory } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom'; // Change here
 
 const Signup = () => {
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
-  const history = useHistory();
+  const navigate = useNavigate(); // Change here
 
-  const handleSignup = (e) => {
+  const handleSubmit = (e) => {
     e.preventDefault();
-    // Here you would usually handle user registration
-    // For now, let's assume the signup is always successful
-    history.push('/dashboard');
+    // Perform signup logic here, then navigate
+    // For simplicity, we'll just navigate
+    navigate('/login'); // Change here
   };
 
   return (
     <div>
       <h2>Signup</h2>
-      <form onSubmit={handleSignup}>
+      <form onSubmit={handleSubmit}>
         <input
           type="text"
           placeholder="Username"
           value={username}
           onChange={(e) => setUsername(e.target.value)}
-          required
         />
         <input
           type="password"
           placeholder="Password"
           value={password}
           onChange={(e) => setPassword(e.target.value)}
-          required
         />
         <button type="submit">Signup</button>
       </form>
