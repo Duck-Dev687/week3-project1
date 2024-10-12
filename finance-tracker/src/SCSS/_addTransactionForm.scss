@@ -1,0 +1,20 @@
+// _addTransactionForm.scss
+.add-transaction-form {
+    margin: $spacing-large 0;
+    .form-group {
+      margin-bottom: $spacing-medium;
+      label {
+        display: block;
+        margin-bottom: $spacing-small;
+      }
+      input, button {
+        width: 100%;
+        padding: $spacing-small;
+        border-radius: $border-radius;
+      }
+      button {
+        @include button-style($primary-color, $background-color);
+      }
+    }
+  }
+  

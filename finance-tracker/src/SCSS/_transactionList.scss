@@ -1,0 +1,22 @@
+// _transactionList.scss
+.transaction-list {
+    margin: $spacing-large 0;
+    list-style: none;
+    padding: 0;
+  
+    .transaction-item {
+      @include flex-center;
+      justify-content: space-between;
+      background-color: $light-bg;
+      padding: $spacing-small;
+      border-radius: $border-radius;
+      margin-bottom: $spacing-small;
+      .transaction-text {
+        color: $text-color;
+      }
+      .transaction-amount {
+        color: $accent-color;
+      }
+    }
+  }
+  

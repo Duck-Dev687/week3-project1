@@ -1,13 +1,10 @@
+// _header.scss
 .header {
-    background-color: $header-bg; // Use a variable defined in _variables.scss
-    color: $header-text-color;     // Use another variable for text color
-    padding: 15px;
-    text-align: center;
-    border-bottom: 1px solid $border-color; // Example using a border variable
-  
-    h1 {
-      margin: 0;
-      font-size: 24px;
-    }
+    @include flex-center;
+    background-color: $header-bg;
+    color: $header-text-color;
+    padding: $spacing-large;
+    font-size: $font-size-large;
+    border-bottom: 2px solid lighten($header-bg, 10%);
   }
   

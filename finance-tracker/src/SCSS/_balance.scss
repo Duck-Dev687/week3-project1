@@ -1,0 +1,14 @@
+// _balance.scss
+.balance {
+    text-align: center;
+    margin: $spacing-large 0;
+    .balance-amount {
+      font-size: 2rem;
+      color: $primary-color;
+    }
+    .balance-label {
+      font-size: $font-size-base;
+      color: $secondary-color;
+    }
+  }
+  

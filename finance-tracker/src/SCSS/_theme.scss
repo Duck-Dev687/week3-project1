@@ -1,0 +1,13 @@
+// _theme.scss
+.app {
+    &.light-theme {
+      background-color: $background-color;
+      color: $text-color;
+    }
+  
+    &.dark-theme {
+      background-color: $dark-bg;
+      color: lighten($text-color, 40%);
+    }
+  }
+  
