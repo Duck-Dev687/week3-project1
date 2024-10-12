@@ -4,12 +4,10 @@ import Header from './components/Header';
 import Balance from './components/Balance';
 import TransactionList from './components/TransactionList';
 import AddTransactionForm from './components/AddTransactionForm';
-import ThemeProvider from './components/ThemeProvider';
+import { ThemeProvider } from './contexts/ThemeContext'; // Only import ThemeProvider here
 import './SCSS/styles.scss';
 
 const App = () => {
-  const [transactions, setTransactions] = useState([]);
-
   // Custom hook for managing local storage
   const useLocalStorage = (key, initialValue) => {
     const [storedValue, setStoredValue] = useState(() => {
@@ -24,12 +22,11 @@ const App = () => {
     return [storedValue, setStoredValue];
   };
 
-  // Load transactions from local storage
-  const [storedTransactions, setStoredTransactions] = useLocalStorage('transactions', []);
-  
-  useEffect(() => {
-    setTransactions(storedTransactions);
-  }, [storedTransactions]);
+  const [transactions, setTransactions] = useLocalStorage('transactions', []);
+
+  const addTransaction = (transaction) => {
+    setTransactions([...transactions, transaction]);
+  };
 
   return (
     <ThemeProvider>
@@ -37,7 +34,7 @@ const App = () => {
         <Header />
         <Balance transactions={transactions} />
         <TransactionList transactions={transactions} />
-        <AddTransactionForm setTransactions={setStoredTransactions} />
+        <AddTransactionForm addTransaction={addTransaction} />
       </div>
     </ThemeProvider>
   );
