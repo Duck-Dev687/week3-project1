@@ -4,8 +4,15 @@ const Balance = ({ transactions }) => {
   const [balance, setBalance] = useState(0);
 
   useEffect(() => {
-    const totalBalance = transactions.reduce((acc, transaction) => acc + transaction.amount, 0);
-    setBalance(totalBalance);
+    if (transactions && Array.isArray(transactions)) {
+      const totalBalance = transactions.reduce((acc, transaction) => {
+        // Add amount for deposits, subtract for withdrawals
+        return acc + (transaction.amount || 0);
+      }, 0);
+      setBalance(totalBalance);
+    } else {
+      setBalance(0); // Reset balance if there are no transactions
+    }
   }, [transactions]);
 
   return (

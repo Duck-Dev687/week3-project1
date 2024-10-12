@@ -25,10 +25,19 @@ const App = () => {
   };
 
   const [transactions, setTransactions] = useLocalStorage('transactions', []);
-
+  
   const addTransaction = (transaction) => {
+    // Ensure the amount is negative for withdrawals
+    if (transaction.type === 'withdrawal') {
+      transaction.amount = -Math.abs(transaction.amount);
+    } else {
+      transaction.amount = Math.abs(transaction.amount);
+    }
     setTransactions([...transactions, transaction]);
   };
+  // const addTransaction = (transaction) => {
+  //   setTransactions([...transactions, transaction]);
+  // };
 
   return (
     <div className={`app ${theme}`}>
