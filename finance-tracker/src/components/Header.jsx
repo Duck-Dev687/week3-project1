@@ -1,10 +1,18 @@
+// src/components/Header.jsx
 import React from 'react';
-import './_header.scss';
+import { useTheme } from '../contexts/ThemeContext';
 
-const Header = () => (
-  <header className="header">
-    <h1>Finance Tracker</h1>
-  </header>
-);
+const Header = () => {
+  const { theme, toggleTheme } = useTheme();
+
+  return (
+    <header>
+      <h1>Finance Tracker</h1>
+      <button onClick={toggleTheme}>
+        Toggle Theme
+      </button>
+    </header>
+  );
+};
 
 export default Header;
