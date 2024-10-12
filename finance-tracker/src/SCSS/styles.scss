@@ -1,0 +1,20 @@
+// styles.scss
+
+// Importing SCSS partials
+@import 'variables'; // Your variables like colors, fonts, etc.
+@import 'mixins';    // Your reusable mixins
+@import 'header';    // Header component styles
+@import 'balance';   // Balance component styles
+@import 'transactionList'; // TransactionList component styles
+@import 'addTransactionForm'; // AddTransactionForm component styles
+@import 'theme';     // Theme styles
+
+// Global styles can go here
+body {
+  margin: 0;
+  font-family: 'Arial', sans-serif; // Replace with your preferred font
+}
+
+.app {
+  padding: 20px; // Main app styling
+}

@@ -1,0 +1,37 @@
+// _variables.scss
+
+// Color Palette
+$primary-color: #3498db; // A shade of blue for primary actions
+$secondary-color: #2ecc71; // A shade of green for secondary actions
+$accent-color: #e74c3c; // A shade of red for alerts or important actions
+
+// Background Colors
+$background-color: #ffffff; // Default background color
+$header-bg: #f8f9fa; // Background color for the header
+$light-bg: #f1f1f1; // Light background color for cards or sections
+$dark-bg: #2c3e50; // Dark background color for dark theme
+
+// Text Colors
+$text-color: #333333; // Default text color
+$header-text-color: #2c3e50; // Text color for headers
+$link-color: $primary-color; // Link color
+$link-hover-color: darken($link-color, 10%); // Darker link color on hover
+
+// Font Variables
+$font-family-base: 'Arial', sans-serif; // Base font family
+$font-size-base: 16px; // Base font size
+$font-size-large: 1.25rem; // Larger font size for headings
+
+// Spacing Variables
+$spacing-small: 8px; // Small spacing
+$spacing-medium: 16px; // Medium spacing
+$spacing-large: 24px; // Large spacing
+$spacing-xlarge: 32px; // Extra large spacing
+
+// Border Radius
+$border-radius: 4px; // Border radius for rounded corners
+
+// Breakpoints for Media Queries
+$breakpoint-mobile: 576px; // Mobile breakpoint
+$breakpoint-tablet: 768px; // Tablet breakpoint
+$breakpoint-desktop: 992px; // Desktop breakpoint
