@@ -1,0 +1,6 @@
+{
+    "minify": true,
+    "options": ["setClasses"],
+    "feature-detects": ["css/flexbox", "css/animations"]  
+  }
+  
