@@ -1,35 +1,46 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+// src/App.jsx
+import React, { useState, useEffect } from 'react';
+import Header from './components/Header';
+import Balance from './components/Balance';
+import TransactionList from './components/TransactionList';
+import AddTransactionForm from './components/AddTransactionForm';
+import ThemeProvider from './components/ThemeProvider';
+import './SCSS/styles.scss';
 
-function App() {
-  const [count, setCount] = useState(0)
+const App = () => {
+  const [transactions, setTransactions] = useState([]);
+
+  // Custom hook for managing local storage
+  const useLocalStorage = (key, initialValue) => {
+    const [storedValue, setStoredValue] = useState(() => {
+      const saved = localStorage.getItem(key);
+      return saved ? JSON.parse(saved) : initialValue;
+    });
+
+    useEffect(() => {
+      localStorage.setItem(key, JSON.stringify(storedValue));
+    }, [key, storedValue]);
+
+    return [storedValue, setStoredValue];
+  };
+
+  // Load transactions from local storage
+  const [storedTransactions, setStoredTransactions] = useLocalStorage('transactions', []);
+  
+  useEffect(() => {
+    setTransactions(storedTransactions);
+  }, [storedTransactions]);
 
   return (
-    <>
-      <div>
-        <a href="https://vitejs.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
+    <ThemeProvider>
+      <div className="app">
+        <Header />
+        <Balance transactions={transactions} />
+        <TransactionList transactions={transactions} />
+        <AddTransactionForm setTransactions={setStoredTransactions} />
       </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
-  )
-}
+    </ThemeProvider>
+  );
+};
 
-export default App
+export default App;
