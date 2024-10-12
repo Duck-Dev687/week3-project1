@@ -1,6 +1,6 @@
 import React from 'react';
 
-const TransactionList = ({ transactions }) => (
+const TransactionList = ({ transactions = [] }) => (
   <ul className="transaction-list">
     {transactions.map((transaction, index) => (
       <li key={index}>
