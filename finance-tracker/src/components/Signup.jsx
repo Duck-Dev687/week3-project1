@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom'; // Import useNavigate
+import '../SCSS/styles.scss'
 
 const Signup = () => {
   const navigate = useNavigate(); // Initialize useNavigate
@@ -42,7 +43,7 @@ const Signup = () => {
     // This is where you would typically send a request to your server/API
 
     // Redirect to home page on successful sign-up
-    navigate('/'); // Redirecting to the home page
+    navigate('/dashboard'); // Redirecting to the home page
   };
 
   return (

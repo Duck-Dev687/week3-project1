@@ -1,6 +1,7 @@
 // styles.scss
 @import 'variables';
 @import 'mixins';
+@import 'mainpage';
 @import 'theme';
 @import 'header';
 @import 'balance';
@@ -11,6 +12,7 @@
 html, body {
   height: 100%; // Ensure html occupies full height
   margin: 0; // Remove default margin
+  
 }
 
 body {
@@ -39,3 +41,30 @@ body.dark {
   background-color: #000000; // Dark theme background
   color: #ffffff; // Dark theme text color
 }
+
+
+button {
+      margin: 5px;
+      padding: 10px 20px;
+      font-size: 1rem;
+      cursor: pointer;
+      background-color: $primary-color; /* Example color */
+      color: white;
+      border: none;
+      border-radius: 5px;
+      transition: background-color 0.3s;
+      
+      &:hover {
+          background-color: #0056b3; /* Darker shade on hover */
+        }
+    }
+    button#showOrHidePassword{
+        color:$primary-color;
+        background-color:$background-color;
+        border:none;
+        padding:0;
+        border-radius:0;
+        &:hover {
+            border-bottom:2px solid $primary-color;
+        }
+    }
